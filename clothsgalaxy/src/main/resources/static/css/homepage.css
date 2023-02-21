@@ -1,0 +1,242 @@
+/*Header section*/
+
+.navbar {
+    background-color: rgb(28, 116, 116);
+}
+
+.navlink {
+    color: rgb(255, 153, 0);
+}
+
+#logo-name {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+
+.banner {
+    background-image: url("../css/images/bacground.jpg");
+    background-size: contain;
+    background-position: center;
+    height: inherit;
+    margin-top: 65px;
+}
+
+#login {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.banner .marquee p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin-top: 10px;
+    color: rgb(0, 238, 255);
+    text-shadow: 1px 1px 2px rgb(191, 225, 16), 0 0 25px rgb(65, 128, 46), 0 0 5px rgb(213, 118, 29);
+}
+
+
+.marquee {
+    direction: ltr;
+
+    background-color: none;
+    color: whitesmoke;
+    height: 100%;
+    font-size: larger;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*align-items: center;*/
+}
+
+
+
+footer {
+
+    float: center;
+    height: auto;
+}
+
+footer section {
+    width: 100%;
+}
+
+#marquee-footer {
+    font-family: fantasy;
+    font-size: 30px;
+    margin-top: 20px;
+    color: chartreuse;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(121, 243, 84), 0 0 5px rgb(24, 238, 120);
+}
+
+
+
+footer button {
+    border-radius: 12px;
+    border: 1px solid #4CAF50;
+    width: 100%;
+    transform: translateY(4px);
+    box-shadow: 0 12px 16px 0 rgba(188, 19, 19, 0.889), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#social {
+    display: none;
+    padding-left: 10px;
+}
+
+
+#social a {
+    width: fit-content;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+#store p {
+    font-size: large;
+    color: aquamarine; 
+}
+#store i {
+    margin-right: 20px;
+}
+
+#about-content {
+    margin-top: 20px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: larger;
+   
+}
+
+
+/*social buttons*/
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-facebook:hover {
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+/* youtube */
+.fa-youtube {
+    background-color: red;
+    color: white;
+}
+
+.carousel-inner>.carousel-item>img {
+
+    height: 450px;
+}
+
+/*Login section*/
+.login-form {
+    background-color: #eff1f3;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 550px;
+    border-radius: 5px;
+}
+
+.close-div {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 20px;
+    height: 30px;
+}
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.login-header {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/*contact section*/
+
+#contact {
+    background-color: darkkhaki;
+    padding: 10px;
+    border:5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+}
+/* Style inputs */
+#contact input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+ #contact input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+ #contact input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .menu i {
+    margin-left: 10px;
+
+  }
+
+  #navbarSupportedContent {
+    height: 100vh;
+    position: fixed;
+    width: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgba(116, 244, 242, 0.7);
+    overflow-x: hidden;
+    transition: .5s;
+  }
+
+  
+
+  #navbarSupportedContent a{
+    padding: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(16, 17, 18);
+    display: block;
+    transition: 0.4s;
+  }
+
+  .leftNav {
+    margin-top: 100px;
+   margin-bottom: 20px;
+  }
+
+
+

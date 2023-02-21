@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" href="../static/css/images/logo shopping.png" th:href="@{/css/images/logo shopping.png}" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/homepage.css" th:href="@{/css/homepage.css}" type="text/css">
+
+    <title>Contact Us</title>
+</head>
+
+<body class="bg-secondary">
+    <header>
+        <!--Navigation section-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top ">
+            <div class="container-fluid bg-danger">
+                <!-- Toggler/collapsibe Button -->
+                <button class="navbar-toggler-icon " type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                </button>
+
+                <a class="navbar-brand" href="#">
+                    <img src="../static/css/images/logo2.jpg" th:src="@{/css/images/logo2.jpg}" alt="company logo" height="40px" width="50px"
+                        class="d-inline-block align-top ">
+                    <span class="align-middle" id="logo-name">Wholesale Cloths Galaxy</span>
+                </a>
+
+                <form class="form-inline mr-sm-2">
+                    <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit"><input
+                            class="form-control mr-sm-2" type="search" placeholder="Search for A-Z product"
+                            aria-label="Search">
+                    </button>
+
+                    <!--dropdown list-->
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav nav-tabs">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle btn-info" href="#" role="button"
+                                    id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    Notification
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">customer care</a>
+                                    <a class="dropdown-item" href="#">Advertise</a>
+                                    <a class="dropdown-item" href="#">Download app</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--login section-->
+                    <button id="login" class="btn btn-md btn-outline-warning my-2 my-sm-0 bg-success toggle-login">
+                        <a href="login" target="_parent" class="text-warning">LOGIN/SIGNUP </a>
+                    </button>
+                    <a href="#">
+                        <img src="../static/css/images/logo.jpg" th:src="@{/css/images/logo.jpg}" alt="cart logo" height="40px" width="50px"
+                            class="rounded-circle">
+                    </a>
+                </form>
+            </div>
+
+        </nav>
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+
+            <ul style="font-weight:bold">
+                <li> <a href="#">Shirts</a></li>
+                <li><a href="#">Dresses</a></li>
+
+                <li><a class="button block  left-align" id="myBtn">
+                        Jeans <i class="fa fa-caret-down"></i> </a></li>
+                <ul id="demoAcc">
+                    <li> <a href="#"><i class="fa fa-caret-right "></i>Skinny</a></li>
+                    <li><a href="#">Relaxed</a></li>
+                    <li> <a href="#">Bootcut</a></li>
+                    <li> <a href="#">Straight</a></li>
+                </ul>
+
+                <li> <a href="#">Jackets</a></li>
+                <li> <a href="#">Gymwear</a></li>
+                <li> <a href="#">Blazers</a></li>
+                <li> <a href="#">Shoes</a></li>
+            </ul>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="#">Subscribe</a></li>
+
+        </div>
+    </header>
+
+    <div class="container " style="margin-top: 100px;" id="contact">
+        <div style="text-align:center">
+            <h2>Contact Us</h2>
+            <p>Questions? Go ahead.</p>
+        </div>
+        <form action="/contact/enquiry" method="post" target="_blank" autocomplete="on" >
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <label for="Email">Email</label>
+            <input type="text" placeholder="Email" name="email" required>
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option value="australia">India</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+            </select>
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+            <input type="submit" class="button block bg-black w-100" value="Send" formmethod="post">
+        </form>
+    </div>
+
+    <!--footer section-->
+    <footer class="bg-dark float-left w-100  ">
+        <div class="container-fluid  d-flex justify-content-between">
+            <section>
+                <button class="btn btn-info active " aria-pressed="true" type="button" id="about">
+                    <a class="nav-link text-white text-*-center" href="#">About </a>
+                </button>
+                <div id="about-content">
+                    <p><a href="#">About us</a></p>
+                    <p><a href="#">Support</a></p>
+                    <p><a href="#">Find store</a></p>
+                    <p><a href="#">Shipment</a></p>
+                    <p><a href="#">Payment</a></p>
+                    <p><a href="#">Gift card</a></p>
+                    <p><a href="#">Return</a></p>
+
+                </div>
+            </section>
+            <section>
+                <button class="btn btn-secondary " type="button">
+                    <a class="nav-link text-danger text-*-center" href="#">Help</a>
+                </button>
+            </section>
+            <section>
+                <button class="btn btn-warning " type="button">
+                    <a class="nav-link text-*-center" href="index" target="_top">Home</a>
+                </button>
+
+            </section>
+            <section>
+                <button class="btn btn-primary " type="button">
+                    <a class="nav-link text-warning text-*-center" href="#">Store</a>
+                </button>
+                <div id="store">
+                    <p><i class="fa fa-fw fa-map-marker"></i> Wholesale Cloths Galaxy</p>
+                    <p> <i class="fa fa-fw fa-phone"> </i>9076229768</p>
+                    <p><i class="fa fa-fw fa-envelope"></i>jitendra0764@gmail.com</p>
+                </div>
+            </section>
+            <section>
+                <button class="btn btn-success " type="button" id="social_btn">
+                    <a class="nav-link text-white text-*-center " href="#">Social</a>
+
+                </button>
+                <div id="social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+            </section>
+        </div>
+        <div id="marquee-footer" class="">
+            <marquee class="marquee " scrollamount="10">
+                <p>THANKS FOR VISITING WHOLESALE CLOTHS GALAXY</p>
+            </marquee>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="../static/JS/index.js" th:src="@{/JS/index.js}"></script>
+
+</body>
+
+</html>
