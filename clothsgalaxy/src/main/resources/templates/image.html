@@ -1,20 +1,44 @@
-<!doctype html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="icon" href="../static/css/images/logo shopping.png" type="image/x-icon"
+        th:href="@{/css/images/logo shopping.png}">
     <link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/login.css}" type="text/css">
+    <title>Admin Page</title>
+    <style>
+        button {
+            background-color: darkolivegreen;
+        }
 
+        .form-wrapper {
+            background-color: cornflowerblue;
+        }
 
-    <title>Login / SignUp Form</title>
+        .input-group label {
+            transform: none;
+            transition: none;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 30px;
+            text-align: center;
+            color: #f61d1d;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
 </head>
 
 <body>
@@ -61,7 +85,7 @@
                     <span class="align-middle" id="logo-name">Wholesale Cloths Galaxy</span>
                 </a>
 
-                <div style="display: inline-flex;margin: 10px;">
+                <div  style="display: inline-flex;margin: 10px;">
                     <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="submit"><input
                             class="form-control mr-sm-2" type="search" placeholder="Search for A-Z product"
                             aria-label="Search">
@@ -96,92 +120,33 @@
             </div>
         </nav>
     </header>
-
-    <main>
-        <div class="wrapper ">
-            <!--Sign up section-->
-            <div class="form-wrapper">
-
-                <form action="/user" method="POST" id="signup" autocomplete="on">
-                    <a href="#login" class="close" onclick="change()"><i class="fa-solid fa-xmark">X</i></a>
-                    <div class="container">
-                        <h1>SignUp</h1>
-                        <p>Please fill in this form to create an account.</p>
-                        <hr>
-                        <div class="input-group">
-                            <input type="text" required name="name">
-                            <label for="username"><b>Username</b></label>
-                        </div>
-                        <div class="input-group">
-                            <input type="email" name="email" required>
-                            <label for="email"><b>Email</b></label>
-                        </div>
-                        <div class="input-group">
-                            <input type="password" name="password" required>
-                            <label for="password"><b>password</b></label>
-                        </div>
-                        <div class="input-group">
-                            <input type="password" name="psw-repeat" required>
-                            <label for="password"><b>Repeat password</b></label>
-                        </div>
-                        <div class="remember">
-                            <label><input type="checkbox" checked="checked" name="remember"> I
-                                agree to the <a href="#" style="color:dodgerblue">terms and condition.</a></label>
-                        </div>
-                        <div class="input-group">
-                            <button type="button" class="cancelbtn">Cancel</button>
-                            <button type="submit" class="btn"> SignUp </button>
-                        </div>
-
-                        <p>Already Have an account? <a href="#login" onclick="change()"> Sign In</a></p>
-
+    <div class="wrapper">
+        
+        <button class="btn btn-success" onclick="index.html">HOME</button>
+        <div class="form-wrapper">
+            <form action="/addimage" method="POST" id="Admin" autocomplete="on">
+                <div class="container">
+                    <h2>Add cloths to database</h2>
+                    <div class="input-group">
+                        <label for="name"><b>Enter name of cloth :</b></label><br><br>
+                        <input type="text" placeholder="Enter name of cloth" name="name"><br><br>
                     </div>
-                </form>
-            </div>
-
-            <!--Signin section-->
-            <div id="sign">
-                <form action="/checklogin" method="POST" id="login" autocomplete="on">
-                    <a href="#signup" class="close" onclick="rechange()"><i class="fa-solid fa-xmark">X</i></a>
-                    <div class="container">
-                        <h1>Login</h1>
-                        <hr>
-                        <div class="input-group">
-                            <input type="text" required name="email">
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="input-group">
-                            <input type="password" required name="password">
-                            <label for="password">password</label>
-                        </div>
-                        <div class="remember">
-                            <label><input type="checkbox" name="remember"> Remember Me</label>
-                        </div>
-                        <div class="input-group">
-                            <button type="submit" class="btn mb-1"> Login </button>
-                        </div>
-                        <p>Don't Have an account? <a href="#signup" onclick="rechange()"> SignUp</a></p>
+                    <div class="input-group">
+                        <label for="cost"><b>Enter cost of cloth :</b></label><br><br>
+                        <input type="text" placeholder="Enter cost here" name="cost"><br><br>
                     </div>
-                </form>
-            </div>
-
+                    <div>
+                        <label for="file"><b>Add images of cloth :</b></label><br><br>
+                        <input type="file" accept="image/*" name="url"><br><br>
+                    </div>
+                    <div class="input-group">
+                        <button type="submit" class="btn">Add Cloth</button><br><br>
+                        <button type="reset" class="btn">Reset</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </main>
-    <script >
-        let signlink = document.getElementById('sign');
-        let signuplink = document.getElementsByClassName('form-wrapper');
-
-        function change() {
-            signlink.style.zIndex = 1;
-            signuplink.style.zIndex = -1;
-
-        }
-
-        function rechange(params) {
-            signlink.style.zIndex = -1;
-            signuplink.style.zIndex = 1;
-        }
-    </script>
+    </div>
     <script src="../static/JS/index.js" th:src="@{/JS/index.js}"></script>
 </body>
 

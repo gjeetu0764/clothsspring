@@ -29,3 +29,15 @@ function hide() {
 btn.addEventListener('mouseover',show);
 btn.addEventListener('click',hide);
 
+
+function display(id){
+  window.location.href = "/cart?value="+id;
+  
+}
+
+function onloadData() {
+     var data = window.location.href;
+     //window.location.href = `/showimages/{[[${data}]]}?value=`+data;
+    window.location.href = `/showimages/{[[${data}.substring(indexof("="),indexof("]"))]]}`;
+   
+ }

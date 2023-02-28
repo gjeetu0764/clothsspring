@@ -13,22 +13,17 @@ public class Image {
     @GeneratedValue
     private Integer id;
     private String name;
-    private Double cost;
+    private String cost;
     private String url;
 
     public Image() {
     }
 
-    public Image(int id, String name, double cost, String url) {
+    public Image(int id, String name, String cost, String url) {
         this.id = id;
         this.name = name;
         this.cost = cost;
         this.url = url;
-    }
-
-    @Override
-    public String toString() {
-        return "Image [id=" + id + ", name=" + name + ", cost=" + cost + ", url=" + url + "]";
     }
 
     public Integer getId() {
@@ -39,7 +34,6 @@ public class Image {
         this.id = id;
     }
 
-
     public String getName() {
         return name;
     }
@@ -48,11 +42,12 @@ public class Image {
         this.name = name;
     }
 
-    public Double getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(Double cost) {
+    public void setCost(String cost) {
+
         this.cost = cost;
     }
 
@@ -61,6 +56,8 @@ public class Image {
     }
 
     public void setUrl(String url) {
-        this.url = url;
+        System.out.println("url" + url);
+        String location = "/css/images/" + url;
+        this.url = location;
     }
 }

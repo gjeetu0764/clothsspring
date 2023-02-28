@@ -12,4 +12,6 @@ public interface ClothsService {
     public String searchUser( String email,String password) ;
     public void addImages(Image image);
     public List<Image> showImages();
+    
+    public Object showImagesid(Integer id);
 }

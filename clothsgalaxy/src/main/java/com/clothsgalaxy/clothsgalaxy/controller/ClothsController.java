@@ -1,10 +1,13 @@
 package com.clothsgalaxy.clothsgalaxy.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.clothsgalaxy.clothsgalaxy.Service.ClothsService;
@@ -18,13 +21,26 @@ public class ClothsController {
     @Autowired
     private ClothsService clothsservice;
 
-    @GetMapping("/index")
-    public String index() {
+    @GetMapping("/")
+    public String index(Model model) {
+        model.addAttribute("all_Images", clothsservice.showImages());
+        
         return "index";
     }
 
+     @GetMapping("/cart")
+     public String getcartdetails() {
+        return "cart";
+     }
+
     @GetMapping("/contact/index")
     public String contactReturn() {
+        return "index";
+    }
+
+    
+    @GetMapping("/image")
+    public String imageReturn() {
         return "index";
     }
 
@@ -53,28 +69,32 @@ public class ClothsController {
     @PostMapping("/checklogin")
     public String checklogin(String email, String password) {
 
-        String message = clothsservice.searchUser(email, password);
-
-        return "index";
+        if (email.equals("jitendra0764@gmail.com") && password.equals("9076229768")) {
+            return "image";
+        } else {
+            String message = clothsservice.searchUser(email, password);
+            return "index";
+        }
     }
 
     @PostMapping("/addimage")
-    public String  addimage(@ModelAttribute Image image) {
+    public String addimage(@ModelAttribute Image image) {
         clothsservice.addImages(image);
-        return "index";
-        
+        return "image";
+
     }
 
     @GetMapping("/showimages")
     public String showImages(Model model) {
-        model.addAttribute("all_Images",clothsservice.showImages());
+        model.addAttribute("all_Images", clothsservice.showImages());
         return "index";
     }
 
     
-    @GetMapping("/getimages")
-    public String getImages(Model model) {
-        
-        return "index";
+    @GetMapping("/showimages/{id}")
+    public String showImagesid(Model model,Integer id) {
+        model.addAttribute("all_Images", clothsservice.showImagesid(id));
+        return "cart";
     }
+
 }

@@ -5,12 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
 @Entity
-@Table(name ="User")
+@Table(name = "User")
 public class User {
     private String name;
-    @Id  
+    @Id
     private String email;
     private String password;
 

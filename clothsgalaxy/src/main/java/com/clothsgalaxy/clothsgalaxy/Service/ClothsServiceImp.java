@@ -52,4 +52,10 @@ public class ClothsServiceImp implements ClothsService {
         return imagedao.findAll();
     }
 
+    @Override
+    public Object showImagesid(Integer id) {
+        Object object =imagedao.getReferenceById(id);
+        return object;
+    }
+
 }

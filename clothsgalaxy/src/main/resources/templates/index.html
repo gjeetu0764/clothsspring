@@ -42,13 +42,13 @@
 
                             <li><a class="button block  left-align" id="myBtn">
                                     Jeans <i class="fa fa-caret-down"></i> </a>
-                            <ul id="demoAcc">
-                                <li> <a href="#skinny" > Skinny</a></li>
-                                <li><a href="#">Relaxed</a></li>
-                                <li> <a href="#">Bootcut</a></li>
-                                <li> <a href="#">Straight</a></li>
-                            </ul>
-                        </li>
+                                <ul id="demoAcc">
+                                    <li> <a href="#skinny"> Skinny</a></li>
+                                    <li><a href="#">Relaxed</a></li>
+                                    <li> <a href="#">Bootcut</a></li>
+                                    <li> <a href="#">Straight</a></li>
+                                </ul>
+                            </li>
                             <li> <a href="#">Jackets</a></li>
                             <li> <a href="#">Gymwear</a></li>
                             <li> <a href="#">Blazers</a></li>
@@ -93,7 +93,7 @@
                     <button id="login" class="btn btn-md btn-outline-warning my-2 my-sm-0 bg-success toggle-login">
                         <a href="login" target="_parent" class="text-warning">LOGIN/SIGNUP </a>
                     </button>
-                    <a href="#">
+                    <a th:href="@{${}}">
                         <img src="../static/css/images/logo.jpg" th:src="@{/css/images/logo.jpg}" alt="cart logo"
                             height="40px" width="50px" class="rounded-circle">
                     </a>
@@ -112,7 +112,7 @@
         </div>
 
         <!--craousel section-->
-        <div id="carouselExampleIndicators" class="carousel slide float-left" data-ride="carousel" width="100%">
+        <div id="carouselExampleIndicators" class="carousel slide float-left d-flex" data-ride="carousel" width="100%">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -120,34 +120,37 @@
             </ol>
             <div class="carousel-inner ">
                 <!--first image-->
-                <div class="carousel-item active d-flex ">
-                    <img class="d-block img-fluid" src="../static/css/images/men/mens fashion.webp"
-                        th:src="@{/css/images/men/mens fashion.webp}" alt="mens cloths">
-                    <img class="d-block img-fluid" src="../static/css/images/men/mens fashion.webp"
-                        th:src="@{/css/images/men/mens fashion.webp}" alt="mens cloths">
+                <div class="carousel-item active d-inline-flex float-left">
+                    <img class="d-block img-fluid" src="../static/css/images/mens fashion.webp"
+                        th:src="@{/css/images/mens fashion.webp}" alt="mens cloths">
+                    <img class="d-block img-fluid" src="../static/css/images/mens fashion.webp"
+                        th:src="@{/css/images/mens fashion.webp}" alt="mens cloths">
 
-                    <img class="d-block img-fluid" src="../static/css/images/men/mens fashion.webp"
-                        th:src="@{/css/images/men/mens fashion.webp}" alt="mens cloths">
+                    <img class="d-block img-fluid" src="../static/css/images/mens fashion.webp"
+                        th:src="@{/css/images/mens fashion.webp}" alt="mens cloths">
                     <div class="carousel-caption d-none d-md-block">
                         <h4>MENS TRENDS</h4>
                         <p>...</p>
                     </div>
                 </div>
                 <!--second image-->
-                <div class="carousel-item ">
-                    <img class="d-block   img-fluid" src="../static/css/images/womens/vbhp fashion.webp"
-                        th:src="@{/css/images/womens/vbhp fashion.webp}" alt="women cloths">
+                <div class="carousel-item  d-inline-flex ">
+                    <img class="d-block   img-fluid" src="../static/css/images/vbhp fashion.webp"
+                        th:src="@{/css/images/vbhp fashion.webp}" alt="women cloths">
                     <div class="carousel-caption d-none d-md-block">
                         <h4>WOMENS FASHION</h4>
                         <p>...</p>
                     </div>
                 </div>
                 <!--third image-->
-                <div class="carousel-item ">
-                    <img class="d-block  img-fluid" src="../static/css/images/boys kids/boys tshirt.webp"
-                        th:src="@{/css/images/boys kids/boys tshirt.webp}" alt="boys cloths">
-                    <img class="d-block  img-fluid" src="../static/css/images/boys kids/9-10-years-new-sweatshirt.webp"
-                        th:src="@{/css/images/boys kids/9-10-years-new-sweatshirt.webp}" alt="girls cloths">
+                <div class="carousel-item  ">
+                    <img class="d-inline-block  img-fluid" src="../static/css/images/boys tshirt.webp"
+                        th:src="@{/css/images/boys tshirt.webp}" alt="boys cloths">
+                    <img class="d-inline-block  img-fluid" src="../static/css/images/9-10-years-new-sweatshirt.webp"
+                        th:src="@{/css/images/9-10-years-new-sweatshirt.webp}" alt="girls cloths">
+                    <img class="d-inline-block  img-fluid" src="../static/css/images/9-10-years-new-sweatshirt.webp"
+                        th:src="@{/css/images/9-10-years-new-sweatshirt.webp}" alt="girls cloths">
+
                     <div class="carousel-caption d-none d-md-block">
                         <h4>KIDS&BABY STYLE</h4>
                         <p>...</p>
@@ -166,57 +169,65 @@
         </div>
 
         <!-- Product grid -->
-        <div class="row float-left display-inline-flex w-100">
-            <div class="col-lg-6 col-sm-3">
-                <div class="container " id="skinny">
-                    <img src="../static/css/images/womens/ripped skinny.jpg"
-                        th:src="@{/css/images/womens/ripped skinny.jpg}" width="100%">
-                    <p class="d-inline-flex ">Ripped Skinny Jeans  <br><b>$24.99</b></p>
+        <div class="float-left d-flex w-100 mt-2">
+            <div class="product">
+                <div class="row">
+                    <div class="col">
+                        <div class="container " id="skinny">
+                            <img src="../static/css/images/ripped skinny.jpg" th:src="@{/css/images/ripped skinny.jpg}"
+                                width="100%">
+                            <p class=" ">Ripped Skinny Jeans <br><b>$24.99</b></p>
 
-                    <button class="button btn-secondary btn float-right">Buy now<i class="fa fa-shopping-cart"></i></button>
+                            <button class="button btn-secondary btn float-right">Buy now<i
+                                    class="fa fa-shopping-cart"></i></button>
 
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="container">
+                            <img src="../static/css/images/mega ripped jeans.jpg"
+                                th:src="@{/css/images/mega ripped jeans.jpg}" width="100%">
+                            <p class=" ">Mega Ripped Jeans <br><b>$19.99</b></p>
+
+                            <button class="button btn-secondary btn float-right">Buy now
+                                <i class="fa fa-shopping-cart"></i></button>
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="container ">
+                            <img src="../static/css/images/washed skinny jeans.jpg"
+                                th:src="@{/css/images/washed skinny jeans.jpg}" width="100%">
+
+                            <p class=" ">Washed Skinny Jeans <br><b>$20.50</b></p>
+                            <button class="button btn-secondary btn float-right">Buy now<i
+                                    class="fa fa-shopping-cart"></i></button>
+
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="container ">
+                            <img src="../static/css/images/vintage Skinny jeans.jpg"
+                                th:src="@{/css/images/vintage Skinny jeans.jpg}" width="100%">
+                            <p class=" ">Vintage Skinny Jeans <br><b>$14.99</b></p>
+                            <button class="button btn-secondary btn float-right">Buy now<i
+                                    class="fa fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="container">
-                    <img src="../static/css/images/men/mega ripped jeans.jpg"
-                        th:src="@{/css/images/men/mega ripped jeans.jpg}" width="100%">
-                    <p class="d-inline-flex ">Mega Ripped Jeans  <br><b>$19.99</b></p>
+                <!-- Dynamic images -->
 
-                    <button class="button btn-secondary btn float-right">Buy now<i class="fa fa-shopping-cart"></i></button>
+                <div class="col" th:each="i : ${all_Images}">
+                    <div class="container row ">
+                        <img src="[[${i.url}]]" th:src="@{${i.url}}" width="100%" height="fit-content">
 
+                        <p class=" ">[[${i.name}]] <br><span><b>[[${i.cost}]]</b></span></p>
+                        <button class=" btn-secondary btn " th:attr="onclick='display(\''+${i.id}+'\');'" >View Product
+                            <i class="fa fa-shopping-cart"></i></button>
+                    </div>
                 </div>
-
             </div>
-            <div class="col-lg-6 col-sm-3">
-                <div class="container">
-                    <img src="../static/css/images/womens/washed skinny jeans.jpg"
-                        th:src="@{/css/images/womens/washed skinny jeans.jpg}" width="100%">
-
-                    <p class="d-inline-flex ">Washed Skinny Jeans  <br><b>$20.50</b></p>
-                    <button class="button btn-secondary btn float-right">Buy now<i class="fa fa-shopping-cart"></i></button>
-
-                </div>
-                <div class="container">
-                    <img src="../static/css/images/womens/vintage Skinny jeans.jpg"
-                        th:src="@{/css/images/womens/vintage Skinny jeans.jpg}" width="100%">
-                    <p class="d-inline-flex ">Vintage Skinny Jeans  <br><b>$14.99</b></p>
-                    <button class="button btn-secondary btn float-right">Buy now<i class="fa fa-shopping-cart"></i></button>
-                </div>
-
-            </div>
-
-            <div class="col-lg-6 col-sm-3">
-                <div class="container" th:each="i : ${all_Images}">
-                    <img src="[[${i.url}]]"
-                        th:src="@{[[${i.url}]]}" width="100%">
-
-                    <p class="d-inline-flex ">[[${i.name}]] <br><b>[[${i.cost}]]</b></p>
-                    <button class="button btn-secondary btn float-right">Buy now<i class="fa fa-shopping-cart"></i></button>
-
-                </div>
-                
-
-            </div>
-
+        </div>
         </div>
 
         <!-- Subscribe section -->
