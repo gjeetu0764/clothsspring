@@ -1,7 +1,7 @@
 # Wholesale cloths galaxy
 
-###~~~ DESCRIPTION ~~~
-*E-commerce Website Specially for cloths shopping designed by Jitendra.*
+### ~~~ DESCRIPTION ~~~
+**-- E-commerce Website Specially for cloths shopping designed by Jitendra.**--
 It's a most beautiful and user interactive website for shopping online to save time and money.
 
 ### ~~~Features ~~~
